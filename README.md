@@ -39,7 +39,7 @@
 
 1. **Clone the repo**
    ```bash
-   git clone [https://github.com/nicovalerian/tangcare.git](https://github.com/nicovalerian/tangcare.git)
+   git clone https://github.com/nicovalerian/tangcare.git
    cd tangcare
 
 2.  **Install Dependencies**
