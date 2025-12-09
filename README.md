@@ -77,7 +77,12 @@
     php artisan migrate --seed
     ```
 
-    *Seeds populate the default Admin, 2 dummy Yayasans, and sample Events.*
+    *Seeds populate demo data including:*
+    - 1 Admin account (admin@tangcare.com / password)
+    - 3 Yayasans with verified Tangerang locations
+    - 6 Events (mix of ongoing and time-limited)
+    - 5 Donor accounts (donor1@example.com - donor5@example.com / password)
+    - 10 Donations in various states (pending, accepted, rejected, received)
 
 6. **Run Local Server**
 
