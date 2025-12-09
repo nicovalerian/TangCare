@@ -33,40 +33,53 @@
 * PHP >= 8.2
 * Composer
 * Node.js & NPM
-* MySQL
+* MySQL (e.g., XAMPP’s MySQL) running
 
 ### Local Setup
 
 1. **Clone the repo**
-   ```bash
-   git clone https://github.com/nicovalerian/tangcare.git
-   cd tangcare
+    ```bash
+    git clone https://github.com/nicovalerian/tangcare.git
+    cd tangcare
 
-2.  **Install Dependencies**
+2. **Install Dependencies**
 
     ```bash
     composer install
     npm install
     ```
 
-3.  **Environment Configuration**
+3. **Create the database (XAMPP/phpMyAdmin)**
+
+    * In phpMyAdmin, create a database named `tangcare` (utf8mb4).
+    * Ensure MySQL is running. Default XAMPP creds are typically `root` with an empty password.
+
+4. **Environment Configuration**
 
     ```bash
     cp .env.example .env
     php artisan key:generate
     ```
 
-    *Update `.env` with your database credentials.*
+    Update `.env` database section (example for XAMPP):
+    ```dotenv
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=tangcare
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
 
-4.  **Database & Migrations**
+5. **Database & Migrations**
 
     ```bash
     php artisan migrate --seed
     ```
 
-    *(Seeds will populate default Admin, 2 dummy Yayasans, and sample Events)*
+    *Seeds populate the default Admin, 2 dummy Yayasans, and sample Events.*
 
-5.  **Run Local Server**
+6. **Run Local Server**
 
     ```bash
     # Terminal 1 (Vite for Tailwind/Alpine)
