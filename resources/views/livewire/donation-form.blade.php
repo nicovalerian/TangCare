@@ -211,36 +211,67 @@
                         
                         <div class="space-y-3">
                             <!-- Self Delivery -->
-                            <label class="flex items-start gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all
+                            <label class="flex items-start gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all hover:shadow-sm
                                 {{ $delivery_method === 'self' ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-gray-300' }}">
-                                <input type="radio" wire:model="delivery_method" value="self" class="mt-1">
+                                <input type="radio" wire:model="delivery_method" value="self" class="mt-1 hidden">
+                                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 {{ $delivery_method === 'self' ? 'bg-primary' : 'bg-muted' }}">
+                                    <svg class="w-6 h-6 {{ $delivery_method === 'self' ? 'text-white' : 'text-gray-500' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
                                 <div class="flex-1">
                                     <p class="font-semibold text-foreground">Self Delivery</p>
                                     <p class="text-sm text-gray-500">I will deliver the donation myself to the foundation</p>
                                     @if($selectedEvent && $selectedEvent->yayasan->address)
-                                        <p class="text-xs text-primary mt-1">{{ $selectedEvent->yayasan->address }}</p>
+                                        <p class="text-xs text-primary mt-1">📍 {{ $selectedEvent->yayasan->address }}</p>
                                     @endif
                                 </div>
+                                @if($delivery_method === 'self')
+                                    <svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                @endif
                             </label>
                             
                             <!-- Courier -->
-                            <label class="flex items-start gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all
+                            <label class="flex items-start gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all hover:shadow-sm
                                 {{ $delivery_method === 'courier' ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-gray-300' }}">
-                                <input type="radio" wire:model="delivery_method" value="courier" class="mt-1">
+                                <input type="radio" wire:model="delivery_method" value="courier" class="mt-1 hidden">
+                                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 {{ $delivery_method === 'courier' ? 'bg-primary' : 'bg-muted' }}">
+                                    <svg class="w-6 h-6 {{ $delivery_method === 'courier' ? 'text-white' : 'text-gray-500' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
                                 <div class="flex-1">
                                     <p class="font-semibold text-foreground">Online Courier</p>
                                     <p class="text-sm text-gray-500">Send via Gojek, Grab, or similar services</p>
                                 </div>
+                                @if($delivery_method === 'courier')
+                                    <svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                @endif
                             </label>
                             
                             <!-- Expedition -->
-                            <label class="flex items-start gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all
+                            <label class="flex items-start gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all hover:shadow-sm
                                 {{ $delivery_method === 'expedition' ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-gray-300' }}">
-                                <input type="radio" wire:model="delivery_method" value="expedition" class="mt-1">
+                                <input type="radio" wire:model="delivery_method" value="expedition" class="mt-1 hidden">
+                                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 {{ $delivery_method === 'expedition' ? 'bg-primary' : 'bg-muted' }}">
+                                    <svg class="w-6 h-6 {{ $delivery_method === 'expedition' ? 'text-white' : 'text-gray-500' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                                    </svg>
+                                </div>
                                 <div class="flex-1">
                                     <p class="font-semibold text-foreground">Expedition Service</p>
                                     <p class="text-sm text-gray-500">Send via JNE, J&T, SiCepat, or similar</p>
                                 </div>
+                                @if($delivery_method === 'expedition')
+                                    <svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                @endif
                             </label>
                         </div>
                         

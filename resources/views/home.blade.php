@@ -38,18 +38,61 @@
                     </div>
                 </div>
                 
-                <!-- Hero Illustration - Abstract Geometric Composition -->
+                <!-- Hero Illustration - Meaningful Visual Story -->
                 <div class="hidden lg:flex justify-center items-center relative">
-                    <div class="relative w-80 h-80">
-                        <!-- Main Circle -->
-                        <div class="absolute inset-0 bg-white/10 rounded-full"></div>
-                        <!-- Overlapping Shapes -->
-                        <div class="absolute top-8 left-8 w-40 h-40 bg-secondary/80 rounded-lg rotate-12"></div>
-                        <div class="absolute bottom-8 right-8 w-32 h-32 bg-accent/80 rounded-full"></div>
-                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-lg flex items-center justify-center">
-                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    <div class="relative w-96 h-80">
+                        <!-- Connection Lines (animated) -->
+                        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 320">
+                            <path d="M80 160 Q200 80 320 160" stroke="rgba(255,255,255,0.2)" stroke-width="3" fill="none" stroke-dasharray="8 8">
+                                <animate attributeName="stroke-dashoffset" from="16" to="0" dur="1s" repeatCount="indefinite" />
+                            </path>
+                            <path d="M80 160 Q200 240 320 160" stroke="rgba(255,255,255,0.15)" stroke-width="3" fill="none" stroke-dasharray="8 8">
+                                <animate attributeName="stroke-dashoffset" from="0" to="16" dur="1.5s" repeatCount="indefinite" />
+                            </path>
+                        </svg>
+                        
+                        <!-- Donor Side (Left) -->
+                        <div class="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col items-center">
+                            <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg mb-2">
+                                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                </svg>
+                            </div>
+                            <span class="text-white/80 text-sm font-medium">Donors</span>
+                        </div>
+                        
+                        <!-- Center Heart Icon -->
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-xl animate-pulse">
+                            <svg class="w-12 h-12 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                             </svg>
+                        </div>
+                        
+                        <!-- Package floating -->
+                        <div class="absolute top-8 left-1/2 -translate-x-1/2 w-14 h-14 bg-secondary rounded-lg flex items-center justify-center shadow-lg animate-bounce" style="animation-delay: 0.5s; animation-duration: 2s;">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                            </svg>
+                        </div>
+                        
+                        <!-- Foundation Side (Right) -->
+                        <div class="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col items-center">
+                            <div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center shadow-lg mb-2">
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+                            <span class="text-white/80 text-sm font-medium">Yayasans</span>
+                        </div>
+                        
+                        <!-- Floating Stats -->
+                        <div class="absolute bottom-4 left-1/4 bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2">
+                            <p class="text-white text-xs font-bold">500+ kg</p>
+                            <p class="text-white/60 text-xs">donated</p>
+                        </div>
+                        <div class="absolute bottom-4 right-1/4 bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2">
+                            <p class="text-white text-xs font-bold">25+</p>
+                            <p class="text-white/60 text-xs">verified</p>
                         </div>
                     </div>
                 </div>
