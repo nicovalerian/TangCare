@@ -27,7 +27,15 @@ class Login extends Component
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
             session()->regenerate();
             
-            $this->redirect(route('dashboard'), navigate: true);
+            // Role-based redirect
+            $user = Auth::user();
+            $redirect = match($user->role) {
+                'admin' => route('admin.dashboard'),
+                'yayasan' => route('yayasan.dashboard'),
+                default => route('dashboard'),
+            };
+            
+            $this->redirect($redirect, navigate: true);
         } else {
             $this->addError('email', 'The provided credentials do not match our records.');
         }
