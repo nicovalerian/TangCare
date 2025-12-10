@@ -2,7 +2,10 @@
 
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
-use App\Models\User;
+use App\Livewire\Yayasan\Profile as YayasanProfile;
+use App\Livewire\Yayasan\EventIndex;
+use App\Livewire\Yayasan\EventForm;
+use App\Livewire\Admin\YayasanList;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -55,6 +58,11 @@ Route::middleware('auth')->prefix('yayasan')->name('yayasan.')->group(function (
         }
         return view('yayasan.dashboard');
     })->name('dashboard');
+    
+    Route::get('/profile', YayasanProfile::class)->name('profile');
+    Route::get('/events', EventIndex::class)->name('events');
+    Route::get('/events/create', EventForm::class)->name('events.create');
+    Route::get('/events/{id}/edit', EventForm::class)->name('events.edit');
 });
 
 // Admin Routes
@@ -65,4 +73,6 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         }
         return view('admin.dashboard');
     })->name('dashboard');
+    
+    Route::get('/yayasans', YayasanList::class)->name('yayasans');
 });
