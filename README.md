@@ -103,7 +103,7 @@ Access the app at `http://localhost:8000`.
   - [x] **Map:** Implement Leaflet markers for Events
   - [x] **Donation:** Multi-step Livewire form (Details -\> Photo Upload -\> Delivery Method)
   - [x] **Donation:** Status update notifications (Database driven + Livewire polling)
-  - [ ] **Admin:** Dashboard charts for Total Kg Donated
+  - [x] **Admin:** Dashboard charts for Total Kg Donated
 
 ## 🤝 Contributing
 

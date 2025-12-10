@@ -77,12 +77,7 @@ Route::middleware('auth')->prefix('yayasan')->name('yayasan.')->group(function (
 
 // Admin Routes
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', function () {
-        if (!auth()->user()->isAdmin()) {
-            abort(403, 'Unauthorized: Admin access only');
-        }
-        return view('admin.dashboard');
-    })->name('dashboard');
-    
+    Route::get('/dashboard', \App\Livewire\Admin\Dashboard::class)->name('dashboard');
     Route::get('/yayasans', YayasanList::class)->name('yayasans');
 });
+
