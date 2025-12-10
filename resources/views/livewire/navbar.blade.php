@@ -39,6 +39,9 @@
             <!-- Desktop Auth Links -->
             <div class="hidden md:flex items-center gap-4">
                 @auth
+                    <!-- Notification Bell -->
+                    <livewire:notification-bell />
+                    
                     <div class="flex items-center gap-3">
                         <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                             <span class="text-sm font-bold text-white">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</span>
