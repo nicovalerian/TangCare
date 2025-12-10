@@ -2,6 +2,7 @@
 
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
+use App\Livewire\EventsMap;
 use App\Livewire\Yayasan\Profile as YayasanProfile;
 use App\Livewire\Yayasan\EventIndex;
 use App\Livewire\Yayasan\EventForm;
@@ -19,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+// Events Map - Public (find events on map)
+Route::get('/events', EventsMap::class)->name('events.map');
 
 // Guest Routes (only accessible when NOT logged in)
 Route::middleware('guest')->group(function () {

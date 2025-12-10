@@ -100,7 +100,7 @@ Access the app at `http://localhost:8000`.
 
   - [x] **Core:** User Auth (Breeze/Jetstream with Livewire)
   - [x] **Core:** Yayasan CRUD & Verification logic
-  - [ ] **Map:** Implement Leaflet markers for Events
+  - [x] **Map:** Implement Leaflet markers for Events
   - [ ] **Donation:** Multi-step Livewire form (Details -\> Photo Upload -\> Delivery Method)
   - [ ] **Donation:** Status update notifications (Database driven + Livewire polling)
   - [ ] **Admin:** Dashboard charts for Total Kg Donated

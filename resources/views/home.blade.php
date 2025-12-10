@@ -251,8 +251,8 @@
                 <a href="/register" class="btn-primary !bg-white !text-accent hover:!bg-gray-100">
                     Get Started Now
                 </a>
-                <a href="#features" class="btn-outline !border-4 !border-white !text-white hover:!bg-white hover:!text-accent">
-                    Learn More
+                <a href="{{ route('events.map') }}" class="btn-outline !border-4 !border-white !text-white hover:!bg-white hover:!text-accent">
+                    Find Events
                 </a>
             </div>
         </div>
@@ -281,7 +281,7 @@
                 <div>
                     <h4 class="text-white font-semibold mb-4 uppercase tracking-wide text-sm">Platform</h4>
                     <ul class="space-y-2">
-                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="{{ route('events.map') }}" class="text-gray-400 hover:text-white transition-colors">Find Events</a></li>
                         <li><a href="#how-it-works" class="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
                         <li><a href="#stats" class="text-gray-400 hover:text-white transition-colors">Impact</a></li>
                     </ul>

@@ -19,7 +19,7 @@
                     <a href="{{ route('home') }}" class="text-gray-600 font-medium hover:text-primary transition-colors duration-200">Home</a>
                     @if(auth()->user()->isDonor())
                         <span class="text-gray-400 font-medium cursor-not-allowed" title="Coming soon">My Donations</span>
-                        <span class="text-gray-400 font-medium cursor-not-allowed" title="Coming soon">Find Events</span>
+                        <a href="{{ route('events.map') }}" class="text-gray-600 font-medium hover:text-primary transition-colors duration-200">Find Events</a>
                     @elseif(auth()->user()->isYayasan())
                         <a href="{{ route('yayasan.events') }}" class="text-gray-600 font-medium hover:text-primary transition-colors duration-200">My Events</a>
                         <span class="text-gray-400 font-medium cursor-not-allowed" title="Coming soon">Donations</span>
@@ -30,7 +30,7 @@
                 @else
                     {{-- Guest: Show homepage section links --}}
                     <a href="{{ route('home') }}" class="text-foreground font-medium hover:text-primary transition-colors duration-200">Home</a>
-                    <a href="{{ route('home') }}#features" class="text-gray-600 font-medium hover:text-primary transition-colors duration-200">Features</a>
+                    <a href="{{ route('events.map') }}" class="text-gray-600 font-medium hover:text-primary transition-colors duration-200">Find Events</a>
                     <a href="{{ route('home') }}#how-it-works" class="text-gray-600 font-medium hover:text-primary transition-colors duration-200">How It Works</a>
                     <a href="{{ route('home') }}#stats" class="text-gray-600 font-medium hover:text-primary transition-colors duration-200">Impact</a>
                 @endauth
@@ -93,7 +93,7 @@
                     <a href="{{ route('home') }}" class="block text-gray-600 font-medium py-2 hover:text-primary transition-colors">Home</a>
                     @if(auth()->user()->isDonor())
                         <span class="block text-gray-400 font-medium py-2 cursor-not-allowed">My Donations (Coming soon)</span>
-                        <span class="block text-gray-400 font-medium py-2 cursor-not-allowed">Find Events (Coming soon)</span>
+                        <a href="{{ route('events.map') }}" class="block text-gray-600 font-medium py-2 hover:text-primary transition-colors">Find Events</a>
                     @elseif(auth()->user()->isYayasan())
                         <a href="{{ route('yayasan.events') }}" class="block text-gray-600 font-medium py-2 hover:text-primary transition-colors">My Events</a>
                         <span class="block text-gray-400 font-medium py-2 cursor-not-allowed">Donations (Coming soon)</span>
@@ -110,7 +110,7 @@
                 @else
                     {{-- Guest mobile menu --}}
                     <a href="{{ route('home') }}" class="block text-foreground font-medium py-2 hover:text-primary transition-colors">Home</a>
-                    <a href="{{ route('home') }}#features" class="block text-gray-600 font-medium py-2 hover:text-primary transition-colors">Features</a>
+                    <a href="{{ route('events.map') }}" class="block text-gray-600 font-medium py-2 hover:text-primary transition-colors">Find Events</a>
                     <a href="{{ route('home') }}#how-it-works" class="block text-gray-600 font-medium py-2 hover:text-primary transition-colors">How It Works</a>
                     <a href="{{ route('home') }}#stats" class="block text-gray-600 font-medium py-2 hover:text-primary transition-colors">Impact</a>
                     <div class="pt-4 border-t-2 border-gray-100 space-y-3">
