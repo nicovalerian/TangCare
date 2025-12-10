@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Models\Event;
-use App\Models\Yayasan;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -14,6 +13,16 @@ class EventsMap extends Component
 {
     public string $search = '';
     public bool $onlyOngoing = true;
+
+    public function updatedSearch(): void
+    {
+        $this->dispatch('markersUpdated', $this->mapData);
+    }
+
+    public function updatedOnlyOngoing(): void
+    {
+        $this->dispatch('markersUpdated', $this->mapData);
+    }
 
     public function getEventsProperty()
     {

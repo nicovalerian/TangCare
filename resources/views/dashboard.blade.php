@@ -78,17 +78,30 @@
                 </div>
             </div>
             
-            <!-- Coming Soon -->
-            <div class="bg-white rounded-lg p-8 text-center">
-                <div class="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                    </svg>
+            <!-- Quick Actions -->
+            <div class="bg-white rounded-lg p-8">
+                <h3 class="text-xl font-bold text-foreground mb-6">Quick Actions</h3>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <a href="{{ route('events.map') }}" class="group p-6 bg-muted rounded-lg hover:bg-primary/10 transition-all hover:scale-[1.02]">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <p class="font-bold text-foreground mb-1">Find Events</p>
+                        <p class="text-sm text-gray-600">Discover donation events near you</p>
+                    </a>
+                    <a href="{{ route('donations.create') }}" class="group p-6 bg-muted rounded-lg hover:bg-secondary/10 transition-all hover:scale-[1.02]">
+                        <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </div>
+                        <p class="font-bold text-foreground mb-1">Make a Donation</p>
+                        <p class="text-sm text-gray-600">Donate to a foundation</p>
+                    </a>
                 </div>
-                <h3 class="text-xl font-bold text-foreground mb-2">More Features Coming Soon</h3>
-                <p class="text-gray-600 max-w-md mx-auto">
-                    We're building donation submission, event discovery, and real-time tracking features. Stay tuned!
-                </p>
             </div>
         </div>
     </div>

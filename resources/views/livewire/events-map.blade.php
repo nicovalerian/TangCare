@@ -60,10 +60,9 @@
                         <div class="max-h-[440px] overflow-y-auto divide-y divide-gray-100">
                             @forelse($events as $event)
                                 <div 
-                                    class="p-4 hover:bg-muted/50 transition-colors cursor-pointer"
-                                    onclick="focusMarker({{ $event->id }})"
+                                    class="p-4 hover:bg-muted/50 transition-colors"
                                 >
-                                    <div class="flex items-start gap-3">
+                                    <div class="flex items-start gap-3 cursor-pointer" onclick="focusMarker({{ $event->id }})">
                                         <div class="w-10 h-10 flex-shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
                                             <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -84,6 +83,17 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @auth
+                                        @if(auth()->user()->isDonor())
+                                            <a href="{{ route('donations.create', ['event' => $event->id]) }}" class="mt-3 block w-full py-2 px-3 text-center text-sm font-medium text-primary bg-primary/10 rounded-md hover:bg-primary hover:text-white transition-colors">
+                                                Donate to this Event
+                                            </a>
+                                        @endif
+                                    @else
+                                        <a href="{{ route('login') }}" class="mt-3 block w-full py-2 px-3 text-center text-sm font-medium text-gray-600 bg-muted rounded-md hover:bg-gray-200 transition-colors">
+                                            Login to Donate
+                                        </a>
+                                    @endauth
                                 </div>
                             @empty
                                 <div class="p-8 text-center text-gray-500">

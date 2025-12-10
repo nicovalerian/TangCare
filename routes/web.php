@@ -3,6 +3,8 @@
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
 use App\Livewire\EventsMap;
+use App\Livewire\DonationForm;
+use App\Livewire\DonationSuccess;
 use App\Livewire\Yayasan\Profile as YayasanProfile;
 use App\Livewire\Yayasan\EventIndex;
 use App\Livewire\Yayasan\EventForm;
@@ -52,6 +54,10 @@ Route::middleware('auth')->group(function () {
         }
         return view('dashboard');
     })->name('dashboard');
+    
+    // Donation Routes (for donors)
+    Route::get('/donate/{event?}', DonationForm::class)->name('donations.create');
+    Route::get('/donate/success', DonationSuccess::class)->name('donations.success');
 });
 
 // Yayasan Routes

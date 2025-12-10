@@ -15,6 +15,7 @@
     <!-- Styles & Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
+    @stack('styles')
 </head>
 <body class="min-h-screen bg-primary">
     <!-- Geometric Background Decorations -->
@@ -48,5 +49,7 @@
     </div>
     
     @livewireScripts
+    @stack('scripts')
 </body>
 </html>
+
