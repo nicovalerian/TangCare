@@ -18,7 +18,7 @@
                     <a href="{{ route('dashboard') }}" class="text-foreground font-medium hover:text-primary transition-colors duration-200">Dashboard</a>
                     <a href="{{ route('home') }}" class="text-gray-600 font-medium hover:text-primary transition-colors duration-200">Home</a>
                     @if(auth()->user()->isDonor())
-                        <span class="text-gray-400 font-medium cursor-not-allowed" title="Coming soon">My Donations</span>
+                        <a href="{{ route('donations.index') }}" class="text-gray-600 font-medium hover:text-primary transition-colors duration-200">My Donations</a>
                         <a href="{{ route('events.map') }}" class="text-gray-600 font-medium hover:text-primary transition-colors duration-200">Find Events</a>
                     @elseif(auth()->user()->isYayasan())
                         <a href="{{ route('yayasan.events') }}" class="text-gray-600 font-medium hover:text-primary transition-colors duration-200">My Events</a>
@@ -95,7 +95,7 @@
                     <a href="{{ route('dashboard') }}" class="block text-foreground font-medium py-2 hover:text-primary transition-colors">Dashboard</a>
                     <a href="{{ route('home') }}" class="block text-gray-600 font-medium py-2 hover:text-primary transition-colors">Home</a>
                     @if(auth()->user()->isDonor())
-                        <span class="block text-gray-400 font-medium py-2 cursor-not-allowed">My Donations (Coming soon)</span>
+                        <a href="{{ route('donations.index') }}" class="block text-gray-600 font-medium py-2 hover:text-primary transition-colors">My Donations</a>
                         <a href="{{ route('events.map') }}" class="block text-gray-600 font-medium py-2 hover:text-primary transition-colors">Find Events</a>
                     @elseif(auth()->user()->isYayasan())
                         <a href="{{ route('yayasan.events') }}" class="block text-gray-600 font-medium py-2 hover:text-primary transition-colors">My Events</a>
